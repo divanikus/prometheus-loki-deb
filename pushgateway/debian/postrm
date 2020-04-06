@@ -1,0 +1,17 @@
+#!/bin/sh
+# postrm script for prometheus-pushgateway
+# Script executed after the package is removed.
+
+set -e
+
+case "$1" in
+  purge)
+        rm -rf /var/log/prometheus/prometheus-pushgateway.log \
+            /var/log/prometheus/prometheus-pushgateway.log.* \
+            /var/lib/prometheus/pushgateway.data \
+            /var/run/prometheus/prometheus-pushgateway.pid
+	# We do NOT remove the system user.
+	;;
+esac
+
+#DEBHELPER#

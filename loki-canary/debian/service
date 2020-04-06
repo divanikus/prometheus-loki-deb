@@ -1,0 +1,16 @@
+[Unit]
+Description=Loki Server
+Documentation=https://github.com/grafana/loki/
+
+[Service]
+Restart=always
+User=loki
+EnvironmentFile=/etc/default/loki-canary
+ExecStart=/usr/bin/loki-canary $ARGS
+ExecReload=/bin/kill -HUP $MAINPID
+TimeoutStopSec=20s
+SendSIGKILL=no
+LimitNOFILE=8192
+
+[Install]
+WantedBy=multi-user.target
