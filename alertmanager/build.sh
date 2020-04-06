@@ -18,6 +18,7 @@ fpm -s dir -t deb -n prometheus-$NAME -v $VERSION --url https://prometheus.io/ -
     --deb-default debian/default --after-install debian/postinst --after-remove debian/postrm \
     --config-files /etc/prometheus/alertmanager.yml \
     --config-files /etc/logrotate.d/prometheus-alertmanager \
+    debian/default=/etc/default/prometheus-alertmanager \
     debian/service=/lib/systemd/system/prometheus-alertmanager.service \
     debian/logrotate=/etc/logrotate.d/prometheus-alertmanager \
     $NAME/alertmanager=/usr/bin/prometheus-alertmanager \

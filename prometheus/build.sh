@@ -30,6 +30,7 @@ fpm -s dir -t deb -n $NAME -v $VERSION --url https://prometheus.io/ --deb-compre
     --config-files /etc/prometheus/consoles \
     --config-files /etc/prometheus/console_libraries \
     --config-files /etc/logrotate.d/prometheus \
+    debian/default=/etc/default/$NAME \
     debian/service=/lib/systemd/system/prometheus.service \
     debian/logrotate=/etc/logrotate.d/prometheus \
     $NAME/prometheus=/usr/bin/prometheus \

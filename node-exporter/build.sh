@@ -15,6 +15,7 @@ gzip $NAME/node_exporter.1
 fpm -s dir -t deb -n prometheus-node-exporter -v $VERSION --url https://prometheus.io/ --deb-compression xz -a amd64 \
     --deb-default debian/default --after-install debian/postinst --after-remove debian/postrm \
     --config-files /etc/logrotate.d/prometheus-node-exporter \
+    debian/default=/etc/default/prometheus-node-exporter \
     debian/service=/lib/systemd/system/prometheus-node-exporter.service \
     debian/logrotate=/etc/logrotate.d/prometheus-node-exporter \
     $NAME/node_exporter=/usr/bin/prometheus-node-exporter \
