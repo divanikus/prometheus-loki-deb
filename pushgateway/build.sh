@@ -13,8 +13,9 @@ sed -i -e '/^  /d' $NAME/pushgateway.1
 gzip $NAME/pushgateway.1
 
 fpm -s dir -t deb -n prometheus-$NAME -v $VERSION --url https://prometheus.io/ --deb-compression xz -a amd64 \
-    --deb-default debian/default --after-install debian/postinst --after-remove debian/postrm \
+    --after-install debian/postinst --after-remove debian/postrm \
     --config-files /etc/logrotate.d/prometheus-pushgateway \
+    --config-files /etc/default/prometheus-$NAME \
     debian/default=/etc/default/prometheus-$NAME \
     debian/service=/lib/systemd/system/prometheus-pushgateway.service \
     debian/logrotate=/etc/logrotate.d/prometheus-pushgateway \

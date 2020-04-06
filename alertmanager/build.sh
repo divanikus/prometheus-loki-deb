@@ -15,9 +15,10 @@ gzip $NAME/alertmanager.1
 gzip $NAME/amtool.1
 
 fpm -s dir -t deb -n prometheus-$NAME -v $VERSION --url https://prometheus.io/ --deb-compression xz -a amd64 \
-    --deb-default debian/default --after-install debian/postinst --after-remove debian/postrm \
+    --after-install debian/postinst --after-remove debian/postrm \
     --config-files /etc/prometheus/alertmanager.yml \
     --config-files /etc/logrotate.d/prometheus-alertmanager \
+    --config-files /etc/default/prometheus-alertmanager \
     debian/default=/etc/default/prometheus-alertmanager \
     debian/service=/lib/systemd/system/prometheus-alertmanager.service \
     debian/logrotate=/etc/logrotate.d/prometheus-alertmanager \

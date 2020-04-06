@@ -25,11 +25,12 @@ gzip $NAME/promtool.1
 gzip $NAME/tsdb.1
 
 fpm -s dir -t deb -n $NAME -v $VERSION --url https://prometheus.io/ --deb-compression xz -a amd64 \
-    --deb-default debian/default --after-install debian/postinst --after-remove debian/postrm \
+    --after-install debian/postinst --after-remove debian/postrm \
     --config-files /etc/prometheus/prometheus.yml \
     --config-files /etc/prometheus/consoles \
     --config-files /etc/prometheus/console_libraries \
     --config-files /etc/logrotate.d/prometheus \
+    --config-files /etc/default/$NAME \
     debian/default=/etc/default/$NAME \
     debian/service=/lib/systemd/system/prometheus.service \
     debian/logrotate=/etc/logrotate.d/prometheus \
