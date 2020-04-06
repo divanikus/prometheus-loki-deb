@@ -38,8 +38,8 @@ fpm -s dir -t deb -n $NAME -v $VERSION --url https://prometheus.io/ --deb-compre
     $NAME/promtool=/usr/bin/promtool \
     $NAME/tsdb=/usr/bin/tsdb \
     $NAME/prometheus.yml=/etc/prometheus/prometheus.yml \
-    $NAME/consoles=/etc/prometheus/consoles \
-    $NAME/console_libraries=/etc/prometheus/console_libraries \
+    $NAME/consoles=/etc/prometheus \
+    $NAME/console_libraries=/etc/prometheus \
     $NAME/prometheus.1.gz=/usr/share/man/man1/prometheus.1.gz \
     $NAME/promtool.1.gz=/usr/share/man/man1/promtool.1.gz \
     $NAME/tsdb.1.gz=/usr/share/man/man1/tsdb.1.gz
