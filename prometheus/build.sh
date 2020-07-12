@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NAME=prometheus
-VERSION=2.17.1
+VERSION=2.19.2
 
 WHATIS1="prometheus - The Prometheus monitoring server"
 WHATIS2="promtool - Tooling for the Prometheus monitoring system"

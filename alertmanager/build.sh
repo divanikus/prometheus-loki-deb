@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NAME=alertmanager
-VERSION=0.20.0
+VERSION=0.21.0
 
 curl -OL https://github.com/prometheus/$NAME/releases/download/v$VERSION/$NAME-$VERSION.linux-amd64.tar.gz
 tar -zxvf $NAME-$VERSION.linux-amd64.tar.gz

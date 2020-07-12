@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NAME=node_exporter
-VERSION=1.0.0-rc.0
+VERSION=1.0.1
 
 curl -OL https://github.com/prometheus/$NAME/releases/download/v$VERSION/$NAME-$VERSION.linux-amd64.tar.gz
 tar -zxvf $NAME-$VERSION.linux-amd64.tar.gz

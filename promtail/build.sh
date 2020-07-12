@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NAME=promtail
-VERSION=1.4.0
+VERSION=1.5.0
 
 curl -OL https://github.com/grafana/loki/releases/download/v$VERSION/$NAME-linux-amd64.zip
 unzip $NAME-linux-amd64.zip
