@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NAME=pushgateway
-VERSION=1.2.0
+VERSION=1.3.0
 
 curl -OL https://github.com/prometheus/$NAME/releases/download/v$VERSION/$NAME-$VERSION.linux-amd64.tar.gz
 tar -zxvf $NAME-$VERSION.linux-amd64.tar.gz

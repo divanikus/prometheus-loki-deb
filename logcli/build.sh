@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NAME=logcli
-VERSION=1.5.0
+VERSION=2.0.0
 
 curl -OL https://github.com/grafana/loki/releases/download/v$VERSION/$NAME-linux-amd64.zip
 unzip $NAME-linux-amd64.zip
